@@ -95,6 +95,11 @@ void addNeighbor(board current,board goal, int newI, int newJ, int posi, int pos
 
 				newboard.g = tentative_g_score;
 				newboard.f = newboard.g + board::heuristic(newboard,goal);
+				
+				if(newboard.f > 18){
+					cout << "UNSUCCESSFUL\n";
+					exit(0);
+				}
                 
                 board *tmp = new board(); // 
                 *tmp = current;
